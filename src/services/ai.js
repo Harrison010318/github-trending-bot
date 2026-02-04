@@ -2,6 +2,7 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const config = require('../config');
 const prompts = require('../config/prompts');
+const enhancedPrompts = require('../config/prompts-enhanced');
 const logger = require('../utils/logger');
 
 /**
@@ -21,13 +22,22 @@ class AIService {
   /**
    * 生成 HTML 报告
    * @param {string} projectsText - 格式化的项目文本
-   * @param {string} promptType - 提示词类型 (htmlReport, simplifiedReport, englishReport)
+   * @param {string} promptType - 提示词类型 (htmlReport, enhancedReport, insightfulReport)
    * @returns {Promise<string>} 生成的 HTML
    */
   async generateReport(projectsText, promptType = 'htmlReport') {
     logger.info('正在使用 Gemini 生成趋势报告...');
     
-    const prompt = prompts[promptType](projectsText);
+    // 根据报告类型选择提示词
+    let prompt;
+    const allPrompts = { ...prompts, ...enhancedPrompts };
+    
+    if (typeof allPrompts[promptType] === 'function') {
+      prompt = allPrompts[promptType](projectsText);
+    } else {
+      logger.warn(`不支持的提示词类型: ${promptType}，使用默认 htmlReport`);
+      prompt = prompts.htmlReport(projectsText);
+    }
     
     for (let attempt = 1; attempt <= config.ai.maxRetries; attempt++) {
       try {
