@@ -1,0 +1,21 @@
+name: Daily Trending Job
+on:
+  schedule:
+    - cron: '0 1 * * *' # 每天北京时间早上 9:00 运行
+  workflow_dispatch: # 允许你手动点击按钮运行测试
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: Run Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: node index.js
