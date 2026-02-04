@@ -6,7 +6,11 @@
     "start": "node src/index.js",
     "start:old": "node index.js",
     "dev": "NODE_ENV=development node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node src/test.js",
+    "test:simple": "node src/test.js --simple",
+    "test:save": "node src/test.js --save",
+    "test:output": "node src/test.js --output test-results.txt",
+    "test:lang": "node src/test.js --simple"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,437 @@
+============================================================
+GitHub Trending Bot 测试报告
+============================================================
+生成时间: 2026/2/4 15:33:06
+
+============================================================
+第一步：数据抓取
+============================================================
+✅ 成功抓取到 11 个项目
+
+
+📊 原始数据结构（前 3 个项目）
+------------------------------------------------------------
+
+[项目 1]
+{
+  "name": "thedotmack / claude-mem",
+  "url": "https://github.com/thedotmack/claude-mem",
+  "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+  "language": "TypeScript",
+  "stars": "Star\n\n\n    \n\n        21,003\n        \n    \n\n        1,730 stars today",
+  "todayStars": "1,730 stars today"
+}
+
+[项目 2]
+{
+  "name": "masoncl / review-prompts",
+  "url": "https://github.com/masoncl/review-prompts",
+  "description": "AI review prompts",
+  "language": "Python",
+  "stars": "Star\n\n\n    \n\n        444\n        \n    \n\n        54 stars today",
+  "todayStars": "54 stars today"
+}
+
+[项目 3]
+{
+  "name": "openai / skills",
+  "url": "https://github.com/openai/skills",
+  "description": "Skills Catalog for Codex",
+  "language": "Python",
+  "stars": "Star\n\n\n    \n\n        3,270\n        \n    \n\n        377 stars today",
+  "todayStars": "377 stars today"
+}
+
+📋 数据字段统计
+------------------------------------------------------------
+{
+  "name": 11,
+  "url": 11,
+  "description": 11,
+  "language": 11,
+  "stars": 11,
+  "todayStars": 11
+}
+
+💻 编程语言分布
+------------------------------------------------------------
+{
+  "TypeScript": 4,
+  "Python": 5,
+  "Shell": 2
+}
+
+📝 完整项目列表
+------------------------------------------------------------
+
+1. thedotmack / claude-mem
+   URL: https://github.com/thedotmack/claude-mem
+   语言: TypeScript | Stars: Star
+
+
+    
+
+        21,003
+        
+    
+
+        1,730 stars today | 今日: 1,730 stars today
+   描述: A Claude Code plugin that automatically captures everything Claude does during y...
+
+2. masoncl / review-prompts
+   URL: https://github.com/masoncl/review-prompts
+   语言: Python | Stars: Star
+
+
+    
+
+        444
+        
+    
+
+        54 stars today | 今日: 54 stars today
+   描述: AI review prompts
+
+3. openai / skills
+   URL: https://github.com/openai/skills
+   语言: Python | Stars: Star
+
+
+    
+
+        3,270
+        
+    
+
+        377 stars today | 今日: 377 stars today
+   描述: Skills Catalog for Codex
+
+4. automazeio / ccpm
+   URL: https://github.com/automazeio/ccpm
+   语言: Shell | Stars: Star
+
+
+    
+
+        6,804
+        
+    
+
+        123 stars today | 今日: 123 stars today
+   描述: Project management system for Claude Code using GitHub Issues and Git worktrees ...
+
+5. obra / superpowers
+   URL: https://github.com/obra/superpowers
+   语言: Shell | Stars: Star
+
+
+    
+
+        43,858
+        
+    
+
+        817 stars today | 今日: 817 stars today
+   描述: An agentic skills framework & software development methodology that works.
+
+6. virattt / dexter
+   URL: https://github.com/virattt/dexter
+   语言: TypeScript | Stars: Star
+
+
+    
+
+        10,234
+        
+    
+
+        222 stars today | 今日: 222 stars today
+   描述: An autonomous agent for deep financial research
+
+7. karpathy / nanochat
+   URL: https://github.com/karpathy/nanochat
+   语言: Python | Stars: Star
+
+
+    
+
+        42,120
+        
+    
+
+        447 stars today | 今日: 447 stars today
+   描述: The best ChatGPT that $100 can buy.
+
+8. kovidgoyal / calibre
+   URL: https://github.com/kovidgoyal/calibre
+   语言: Python | Stars: Star
+
+
+    
+
+        23,958
+        
+    
+
+        141 stars today | 今日: 141 stars today
+   描述: The official source code repository for the calibre ebook manager
+
+9. OpenBMB / ChatDev
+   URL: https://github.com/OpenBMB/ChatDev
+   语言: Python | Stars: Star
+
+
+    
+
+        29,839
+        
+    
+
+        476 stars today | 今日: 476 stars today
+   描述: ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration
+
+10. pedramamini / Maestro
+   URL: https://github.com/pedramamini/Maestro
+   语言: TypeScript | Stars: Star
+
+
+    
+
+        1,551
+        
+    
+
+        269 stars today | 今日: 269 stars today
+   描述: Agent Orchestration Command Center
+
+11. vm0-ai / vm0
+   URL: https://github.com/vm0-ai/vm0
+   语言: TypeScript | Stars: Star
+
+
+    
+
+        796
+        
+    
+
+        62 stars today | 今日: 62 stars today
+   描述: the easiest way to run natural language-described workflows automatically
+============================================================
+第二步：数据格式化
+============================================================
+🤖 传递给 AI 的格式化文本:
+
+1. 项目名称：thedotmack / claude-mem
+       GitHub 链接：https://github.com/thedotmack/claude-mem
+       项目描述：A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
+       主要语言：TypeScript
+       总获赞数：Star
+
+
+    
+
+        21,003
+        
+    
+
+        1,730 stars today
+       今日新增：1,730 stars today
+
+2. 项目名称：masoncl / review-prompts
+       GitHub 链接：https://github.com/masoncl/review-prompts
+       项目描述：AI review prompts
+       主要语言：Python
+       总获赞数：Star
+
+
+    
+
+        444
+        
+    
+
+        54 stars today
+       今日新增：54 stars today
+
+3. 项目名称：openai / skills
+       GitHub 链接：https://github.com/openai/skills
+       项目描述：Skills Catalog for Codex
+       主要语言：Python
+       总获赞数：Star
+
+
+    
+
+        3,270
+        
+    
+
+        377 stars today
+       今日新增：377 stars today
+
+4. 项目名称：automazeio / ccpm
+       GitHub 链接：https://github.com/automazeio/ccpm
+       项目描述：Project management system for Claude Code using GitHub Issues and Git worktrees for parallel agent execution.
+       主要语言：Shell
+       总获赞数：Star
+
+
+    
+
+        6,804
+        
+    
+
+        123 stars today
+       今日新增：123 stars today
+
+5. 项目名称：obra / superpowers
+       GitHub 链接：https://github.com/obra/superpowers
+       项目描述：An agentic skills framework & software development methodology that works.
+       主要语言：Shell
+       总获赞数：Star
+
+
+    
+
+        43,858
+        
+    
+
+        817 stars today
+       今日新增：817 stars today
+
+6. 项目名称：virattt / dexter
+       GitHub 链接：https://github.com/virattt/dexter
+       项目描述：An autonomous agent for deep financial research
+       主要语言：TypeScript
+       总获赞数：Star
+
+
+    
+
+        10,234
+        
+    
+
+        222 stars today
+       今日新增：222 stars today
+
+7. 项目名称：karpathy / nanochat
+       GitHub 链接：https://github.com/karpathy/nanochat
+       项目描述：The best ChatGPT that $100 can buy.
+       主要语言：Python
+       总获赞数：Star
+
+
+    
+
+        42,120
+        
+    
+
+        447 stars today
+       今日新增：447 stars today
+
+8. 项目名称：kovidgoyal / calibre
+       GitHub 链接：https://github.com/kovidgoyal/calibre
+       项目描述：The official source code repository for the calibre ebook manager
+       主要语言：Python
+       总获赞数：Star
+
+
+    
+
+        23,958
+        
+    
+
+        141 stars today
+       今日新增：141 stars today
+
+9. 项目名称：OpenBMB / ChatDev
+       GitHub 链接：https://github.com/OpenBMB/ChatDev
+       项目描述：ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration
+       主要语言：Python
+       总获赞数：Star
+
+
+    
+
+        29,839
+        
+    
+
+        476 stars today
+       今日新增：476 stars today
+
+10. 项目名称：pedramamini / Maestro
+       GitHub 链接：https://github.com/pedramamini/Maestro
+       项目描述：Agent Orchestration Command Center
+       主要语言：TypeScript
+       总获赞数：Star
+
+
+    
+
+        1,551
+        
+    
+
+        269 stars today
+       今日新增：269 stars today
+
+11. 项目名称：vm0-ai / vm0
+       GitHub 链接：https://github.com/vm0-ai/vm0
+       项目描述：the easiest way to run natural language-described workflows automatically
+       主要语言：TypeScript
+       总获赞数：Star
+
+
+    
+
+        796
+        
+    
+
+        62 stars today
+       今日新增：62 stars today
+============================================================
+第三步：AI 提示词
+============================================================
+💬 AI 提示词预览（前 500 字符）:
+
+
+你是一位资深的开发者和技术内容专家。现在我需要你将以下今天的 GitHub Trending 榜单数据转换为一份专业的、高质量的 HTML 日报。
+
+【数据】
+1. 项目名称：thedotmack / claude-mem
+       GitHub 链接：https://github.com/thedotmack/claude-mem
+       项目描述：A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
+       主要语言：TypeScript
+       总获赞数：Star
+
+
+    
+
+        21,003
+        
+    
+
+        1,730 stars today
+      
+[省略剩余内容]
+============================================================
+📈 数据统计汇总
+============================================================
+{
+  "抓取项目数": 11,
+  "有效描述数": 11,
+  "有效语言数": 11,
+  "格式化文本长度": "3183 字符",
+  "完整提示词长度": "4488 字符",
+  "预计 Token 数": 1122
+}
+
+✨ 测试完成！
