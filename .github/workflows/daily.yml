@@ -1,22 +1,60 @@
 name: Daily Trending Job
 on:
   schedule:
-    - cron: '0 1 * * *' # 每天北京时间早上 9:00 运行
-  workflow_dispatch: # 允许你手动点击按钮运行测试
+    # 设置多个时间点，提高触发成功率
+    - cron: '0 1 * * *'   # 北京时间 09:00
+    - cron: '30 1 * * *'  # 北京时间 09:30 (备用)
+  workflow_dispatch: # 允许手动触发
+  push:
+    branches: [ main, master ] # 保持仓库活跃
 
 jobs:
   send-report:
     runs-on: ubuntu-latest
+    # 添加并发控制，防止同时运行多个实例
+    concurrency:
+      group: daily-report-${{ github.ref }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          
       - run: npm install
+      
+      # 检查今天是否已经运行过
+      - name: Check if already ran today
+        id: check_run
+        continue-on-error: true
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          LAST_RUN=$(gh run list --workflow=daily.yml --limit 1 --json conclusion,createdAt --jq '.[0].createdAt' 2>/dev/null || echo "none")
+          if [[ "$LAST_RUN" != "none" ]]; then
+            LAST_RUN_DATE=$(date -d "$LAST_RUN" +%Y-%m-%d 2>/dev/null || date -j -f "%Y-%m-%dT%H:%M:%SZ" "$LAST_RUN" +%Y-%m-%d)
+            if [[ "$LAST_RUN_DATE" == "$TODAY" ]]; then
+              echo "skip=true" >> $GITHUB_OUTPUT
+              echo "Already ran today, skipping..."
+              exit 0
+            fi
+          fi
+          echo "skip=false" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
       - name: Run Script
+        if: steps.check_run.outputs.skip != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
           REPORT_TYPE: htmlReport
         run: npm start
+      
+      # 记录运行时间，用于调试
+      - name: Log execution time
+        if: always()
+        run: |
+          echo "Workflow executed at: $(date)"
+          echo "Trigger event: ${{ github.event_name }}"
